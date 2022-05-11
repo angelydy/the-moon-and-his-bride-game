@@ -129,7 +129,6 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
-
 style window:
     xalign 0.5
     xfill True
@@ -229,6 +228,7 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    activate_sound "audio/click.wav"
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -275,7 +275,7 @@ screen quick_menu():
 
             imagebutton:
                 idle "skip.png"
-                #hovered [Play("sound", "audio/click.wav")][transform.scale(1.1, 1.1)]
+                hovered [Play("sound", "audio/click.wav")]
                 action Skip()
                 alternate Skip(fast=True, confirm=True)
 

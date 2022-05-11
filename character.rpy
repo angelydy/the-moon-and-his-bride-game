@@ -7,3 +7,5 @@ init python:
     lg = Character("Laura", who_color="#f2ca16")
     mt = Character("Mr. Thomas", who_color="")
     mn = Character("Mr. Norris", who_color="")
+
+    perception = 0
