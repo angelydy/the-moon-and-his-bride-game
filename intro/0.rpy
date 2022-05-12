@@ -24,7 +24,7 @@ label day_0:
                 jump breakfast_0
 
         label bath_0:
-            #scene bath
+            scene bath
             #bath sound effect
             """
             {cps=25}My name is [mc]
@@ -36,7 +36,7 @@ label day_0:
             jump news_0
 
         label breakfast_0:
-            #scene breakfast
+            scene breakfast
             #eating sound effect
             """
             {cps=25}My name is [mc]
@@ -48,13 +48,14 @@ label day_0:
             jump news_0
 
         label news_0:
+            scene player_bedroom day
             mc """
             {cps=25}Hmm... I feel like checking the news today before I go
             {cps=25}Just checking wouldn't hurt....
             {cps=25}Hmm... I wonder what's on the News today
             """
             "*Opens the TV*"
-            #scene tv
+            scene tv open hand
             "Broadcaster" "{cps=25}Breaking News!{p} There seems to be an upcoming Blue Moon this week..."
             "Broadcaster" "{cps=25}We all know that Blue Moon only occurs every 33 months, 41 times per century or about every 19 years.
             Tell us your thought about this..."
@@ -71,7 +72,7 @@ label day_0:
         label school_0:
 
             if late:
-                #scene school classroom
+                scene classroom day with fade
                 with vpunch
                 "?" "{cps=25}YOU'RE LATE!"
                 "You looked at where the voice came from"
@@ -91,7 +92,7 @@ label day_0:
                 """
 
             else:
-                #scene school entrance
+                scene Schoolfront day with fade
                 #Birds Sound effect
                 "?" "{cps=25}[mc] ver here!"
                 "You looked at where the voice came from"
@@ -148,7 +149,7 @@ label day_0:
     label afternoon_0:
         scene black
         centered "{color=#cc6600}Afternoon{/color}"
-        #scene classroom afternoon
+        scene classroom noon
         lg "{cps=25}Thought the class was never gonna end!!"
         #show Laura angry
         #Show Jenny embarrassed
@@ -188,7 +189,7 @@ label day_0:
             jk "{cps=25}YOOOO DUDE THANKS!"
             jk "{cps=25}I OWE YOU BIG!"
             "*Short time passes by while carrying stocks of food to the storage"
-            #scene Canteen
+            scene canteen noon
             #show Jake tired
             jk "{cps=25}A little bit more..."
             jk "{cps=25}Err... {p}Too heavy..."
@@ -450,7 +451,7 @@ label day_0:
             centered "{color=#cc6600}Evening{/color}"
             "(You spend your evening working)"
         centered "{color=#cc6600}Midnight{/color}"
-        #scene room
+        scene player_bedroom night
         mc "*ughh...*"
         mc "{cps=25}I can't feel my body anymore... crap"
         "(You lay in the bed)"
