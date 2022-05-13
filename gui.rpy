@@ -42,7 +42,7 @@ define gui.hover_color = u'#c75b18'
 define gui.selected_color = u'#c75b18'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = u'#aaaaaa7f'
+define gui.insensitive_color = u'#ffffffff'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
@@ -60,22 +60,22 @@ define gui.interface_text_color = u'#404040'
 define gui.text_font = "fonts/roboto-medium.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "fonts/cinzel.ttf"
+define gui.name_text_font = "fonts/optimusprincepssemibold.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "fonts/cinzel.ttf"
+define gui.interface_text_font = "fonts/optimusprincepssemibold.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 55
 
 ## The size of text in the game's user interface.
 if main_menu:
-    define gui.interface_text_size = 70
+    define gui.interface_text_size = 100
 else:
-    define gui.interface_text_size = 33
+    define gui.interface_text_size = 40
 
 ## The size of labels in the game's user interface.
 define gui.label_text_size = 36
@@ -92,7 +92,7 @@ define gui.title_text_size = 75
 ## The images used for the main and game menus.
 #define gui.main_menu_background = Movie(play = "gui/videoBG.ogv")
 define gui.main_menu_background = "gui/main_menu.jpg"
-define gui.game_menu_background = u'#303030'
+define gui.game_menu_background = u'#000000'
 
 
 ## Dialogue ####################################################################
