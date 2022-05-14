@@ -351,7 +351,7 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history") hovered [Play("sound", "audio/click2.wav")]
 
             textbutton _("Save") action ShowMenu("save") hovered [Play("sound", "audio/click2.wav")]
 
@@ -365,7 +365,7 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Main Menu") action MainMenu() hovered [Play("sound", "audio/click2.wav")]
 
         textbutton _("About") action ShowMenu("about") hovered [Play("sound", "audio/click2.wav")]
 
@@ -523,7 +523,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     textbutton _("Return"):
         style "return_button"
 
-        action Return()
+        action Return() hovered [Play("sound", "audio/click2.wav")]
 
     label title
 

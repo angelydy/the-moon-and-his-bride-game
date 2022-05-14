@@ -1,5 +1,5 @@
 label lobby:
-    #scene Kitchen
+    scene lobby
     menu:
         "Living Room":
             jump living_room
@@ -8,22 +8,25 @@ label lobby:
         "Recreation Room":
             jump recreation_room
         "Second Floor":
-            jump second_floor
+            "Out of limit"
+            #jump second_floor
 
 label dining_room:
-    #scene Dining Room
+    scene dining room
     menu:
         "Kitchen":
             jump kitchen
         "Rest room":
-            jump restroom1
+            "(Someone's using the restroom)"
+            jump dining_room
+            #jump restroom1
         "Pool":
             jump pool
         "Lobby":
             jump lobby
 
 label kitchen:
-    #scene kitchen
+    scene kitchen
     menu:
         "Go back":
             jump dining_room
@@ -35,25 +38,33 @@ label restroom1:
             jump dining_room
 
 label pool:
-    #scene pool
+    scene pool night
     menu:
         "Go back":
             jump dining_room
 
 label living_room:
-    #scene living room
+    scene living room
+    if day == 0:
+        "(You see Jake drinking in the living room)"
     menu:
+        "Talk to Jake" if jaketalk_0:
+            jump jaketalk_0
         "Bar":
             jump Bar
         "Basement":
-            jump basement
+            "I shouldn't go there"
+            jump living_room
+            #jump basement
         "Theater":
-            jump theater
+            "Theater's locked"
+            jump living_room
+            #jump theater
         "Lobby":
             jump lobby
 
 label Bar:
-    #scene Bar
+    scene bar
     menu:
         "Go back":
             jump living_room
@@ -85,7 +96,7 @@ label recreation_room:
             jump lobby
 
 label garden:
-    #scene Garden
+    scene garden
     menu:
         "Go back":
             jump recreation_room
@@ -97,7 +108,7 @@ label restroom2:
             jump recreation_room
 
 label art_room:
-    #scene Art room
+    scene art room
     menu:
         "Go back":
             jump recreation_room
@@ -120,7 +131,7 @@ label hallway_left:
             "Lucas said no going to the rooms"
             jump hallway_left
         "Hallway Right":
-            jump hallway_mid
+            call hallway_mid
         "Second Floor":
             jump second_floor
 
@@ -133,7 +144,7 @@ label hallway_right:
             "Lucas said there's no going to the rooms"
             jump hallway_left
         "Hallway Left":
-            jump hallway_mid
+            call hallway_mid
         "Second Floor":
             jump second_floor
 
@@ -149,10 +160,8 @@ label hallway_mid:
         "Library":
             "Door won't budge"
             jump hallway_mid
-        "Hallway Left":
-            jump hallway_left
-        "Hallway Right":
-            jump hallway_right
+        "Go back":
+            return
 
 label balcony:
     menu:
