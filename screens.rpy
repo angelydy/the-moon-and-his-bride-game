@@ -243,6 +243,29 @@ screen quick_menu():
 
     ## Ensure this appears on top of other screens.
     zorder 100
+    hbox:
+        style_prefix "top_menu"
+
+        xalign 0.97
+        ypos 30
+        spacing 50
+
+        imagebutton:
+                idle "map.png"
+                hover "map_hover.png"
+                #action call("map")
+
+        imagebutton:
+                idle "characters.png"
+                hover "characters_hover.png"
+
+        imagebutton:
+                idle "quest.png"
+                hover "quest_hover.png"
+
+        imagebutton:
+                idle "inventory.png"
+                hover "inventory_hover.png"
 
     if quick_menu:
 
