@@ -1,5 +1,6 @@
 label lobby:
     scene lobby
+    with dissolve
     menu:
         "Living Room":
             jump living_room
@@ -9,16 +10,18 @@ label lobby:
             jump recreation_room
         "Second Floor":
             "Out of limit"
+            jump lobby
             #jump second_floor
 
 label dining_room:
     scene dining room
+    with dissolve
     menu:
         "Kitchen":
             jump kitchen
-        "Rest room":
-            "(Someone's using the restroom)"
-            jump dining_room
+        #"Rest room":
+            #"(Someone's using the restroom)"
+            #jump dining_room
             #jump restroom1
         "Pool":
             jump pool
@@ -27,6 +30,7 @@ label dining_room:
 
 label kitchen:
     scene kitchen
+    with dissolve
     menu:
         "Go back":
             jump dining_room
@@ -39,13 +43,16 @@ label restroom1:
 
 label pool:
     scene pool night
+    with dissolve
     menu:
         "Go back":
             jump dining_room
 
 label living_room:
     scene living room
+    with dissolve
     if day == 0:
+        show jake tired at left with dissolve
         "(You see Jake drinking in the living room)"
     menu:
         "Talk to Jake" if jaketalk_0:
@@ -64,7 +71,8 @@ label living_room:
             jump lobby
 
 label Bar:
-    scene bar
+    scene tbar
+    with dissolve
     menu:
         "Go back":
             jump living_room
@@ -82,13 +90,14 @@ label theater:
             jump living_room
 
 label recreation_room:
-    #scene Recreation Room
+    scene recreation
+    with dissolve
     menu:
         "Garden":
             jump garden
-        "Restroom":
-            "Someone's using the rest room"
-            jump recreation_room
+        #"Restroom":
+            #"Someone's using the rest room"
+            #jump recreation_room
             #jump restroom2
         "Art Room":
             jump art_room
@@ -97,6 +106,7 @@ label recreation_room:
 
 label garden:
     scene garden
+    with dissolve
     menu:
         "Go back":
             jump recreation_room
@@ -109,6 +119,7 @@ label restroom2:
 
 label art_room:
     scene art room
+    with dissolve
     menu:
         "Go back":
             jump recreation_room

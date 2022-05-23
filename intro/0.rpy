@@ -100,7 +100,7 @@ label day_0:
                 uk "{cps=25}YOU'RE LATE!"
                 "(You looked at where the voice came from)"
                 show laura angry with dissolve
-                uk "{cps=25}How many times do I need to tell you not to be late! {p}Since we're a team, our professor will gave us a minus!"
+                uk "{cps=25}How many times do I need to tell you not to be late! {p}This is a group work. So, one mistake and everyone will receive a minus point"
                 "{cps=25}This is Laura Godfrey. {p}She's like a living speaker, who always says what's on her mind but she's a responsible student
                 and quite a famous person around the school"
                 "{cps=25}She's totally hooked up into social medias and when it comes to listening to humors... {p}She's always up to date"
@@ -209,7 +209,7 @@ label day_0:
             jk "{cps=25}SIR IS DEAD SERIOUS ABOUT MAKING ME DO COMMUNITY SERVICE IN THE CANTEEN!"
             jk "{cps=25}I'M FREAKING SCARED OF THE OLD CANTEEN LADY..."
             jk "{cps=25}SHE'S LIKE A FREAKING GORILLA!"
-            jk "{cps=25}I swear that she would beat me into a pulp if I make mistakes"
+            jk "{cps=25}I swear... she'll beat me into a pulp if I make mistakes"
             jk "{cps=25}Simply the thought of it makes me shiver..."
 
             menu jk_jen:
@@ -643,9 +643,13 @@ label day_0:
             #show Jake drunk with drink
             menu:
                 "Getting yourself hammered?":
+                    hide jake with dissolve
+                    show jake happy with dissolve
                     jk "{cps=25}Oh why yes! {p}and why the hell not!"
 
                 "You're looking for me?":
+                    hide jake with dissolve
+                    show jake smiling with dissolve
                     jk "{cps=25}Ahh... yes I remember"
 
                 "You okay?":
@@ -656,15 +660,18 @@ label day_0:
             jk "{cps=25}Where you've been?"
             jk "{cps=25}Anywayz,Thiss iz some good stuuf..."
             jk "{cps=25}Stuf... like a happy pill"
+            show jake tired with dissolve
             jk "{cps=25}Heh... can't even drink in the house"
-            jk "{cps=25}You know... people always tell me things that I couldn't do"
+            jk "{cps=25}You know... people always tell me things that I couldn't do..."
             jk "{cps=25}\"Jake you can't do that\" \"Jake can't do this\""
+            show jake nervous with dissolve
             jk "{cps=25}Sick and tired of them man..."
             jk "{cps=25}You know man..."
             jk "{cps=25}I always get compared to Jenny"
             jk "{cps=25}I'm tired of \"You should be like Jenny\""
             jk "{cps=25}or... \"Jenny can do this why can't you?\""
             jk "{cps=25}It's not that I hate Jenny"
+            show jake tired with dissolve
             jk "{cps=25}I am just tired of expectations..."
             jk "{cps=25}That's why... I run away from them you know..."
             jk "{cps=25}Expectations... I always do the opposite"
@@ -672,6 +679,7 @@ label day_0:
             jk "{cps=25}\"Making things worst\""
             menu:
                 "You should listen to them, be more responsible":
+                    show jake nervous with dissolve
                     jk "{cps=25}Man... FUCK... YOU"
                     jk "{cps=25}Get out of my fucking sight"
                     jk "{cps=25}Before I beat the shit out of you"
@@ -682,13 +690,16 @@ label day_0:
                     mc "{cps=25}It happens... we all have someone expecting something from us"
                     mc "{cps=25}Like the way you guys expect me not to be late"
                     if late:
+                        show jake happy with dissolve
                         jk "{cps=25}But you... are late..."
                         mc "{cps=25}That's not the point"
+                    show jake nervous with dissolve
                     mc "{cps=25}The point is it's okay... if you let them down..."
                     mc "{cps=25}What's important is.."
                     mc "{cps=25}you're trying your best"
                     mc "{cps=25}And thats what matters"
                     mc "{cps=25}You're going to be alright"
+                    show jake happy with dissolve
                     jk "{cps=25}Thanks... I really needed that"
                     jk "{cps=25}You really always got my back"
                     jk "{cps=25}You're real solid you know that?"
