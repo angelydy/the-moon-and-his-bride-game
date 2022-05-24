@@ -258,17 +258,17 @@ screen quick_menu():
         imagebutton:
                 idle "characters.png"
                 hover "characters_hover.png"
-                action Rollback()
+                action NullAction()
 
         imagebutton:
                 idle "quest.png"
                 hover "quest_hover.png"
-                action Rollback()
+                action NullAction()
 
         imagebutton:
                 idle "inventory.png"
                 hover "inventory_hover.png"
-                action Rollback()
+                action NullAction()
 
     if quick_menu:
 
