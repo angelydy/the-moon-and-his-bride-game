@@ -244,21 +244,29 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
     hbox:
-        style_prefix "top_menu"
+        style_prefix "left_menu"
 
-        xalign 0.97
-        ypos 30
+        xpos 30
+        ypos 20
         spacing 50
 
         imagebutton:
-                idle "map.png"
-                hover "map_hover.png"
-                action ShowMenu("mapUI")
+            idle "map.png"
+            hover "map_hover.png"
+            action ShowMenu("mapUI")
 
         imagebutton:
                 idle "characters.png"
                 hover "characters_hover.png"
                 action NullAction()
+
+    hbox:
+        style_prefix "right_menu"
+
+        xalign 0.97
+        ypos 20
+        spacing 50
+
 
         imagebutton:
                 idle "quest.png"
