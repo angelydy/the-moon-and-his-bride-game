@@ -252,6 +252,7 @@ screen quick_menu():
 
         imagebutton:
             idle "map.png"
+            hover "map_hover.png"
             action ShowMenu("mapUI")
 
         imagebutton:
