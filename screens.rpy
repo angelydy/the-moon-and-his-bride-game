@@ -251,8 +251,8 @@ screen quick_menu():
         spacing 50
 
         imagebutton:
-                idle "map.png"
-                hover "map_hover.png"
+                idle "phone.png"
+                hover "phone_hover.png"
                 action ShowMenu("phoneUI")
 
     if quick_menu:
