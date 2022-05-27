@@ -20,6 +20,7 @@ image white:
 
 label day_0:
     $ day = 0
+    $ chapter = 0
     label morning_0:
         scene black
         with dissolve

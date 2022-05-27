@@ -9,4 +9,8 @@ init python:
     mn = Character("Mr. Norris", who_color="")
     uk = Character("?",who_color="#ffffff")
 
+    #MC stats
+    energy = 15
     perception = 0
+    money = 15
+    acquired = False

@@ -5,17 +5,17 @@ screen phoneUI():
         imagebutton:
                 idle "home.png"
                 hover "home_click.png"
-                xalign 0.84 
+                xalign 0.84
                 yalign 0.935
                 action Rollback()
 
         hbox:
                 style_prefix "right_menu"
-                
+
                 xalign 0.91
                 yalign 0.82
                 spacing 40
-                
+
                 imagebutton:
                         idle "map.png"
                         hover "map_hover.png"
@@ -58,7 +58,18 @@ screen mapUI():
         imagebutton:
                 idle "locations/home.png"
                 hover "locations/home_hover.png"
-                action Jump("lobby")
+                action Call("lucas_mansion")
                 xalign 0.435
                 yalign 0.495
 
+screen phone():
+        hbox:
+            style_prefix "right_menu"
+            xalign 0.97
+            ypos 20
+            spacing 50
+
+            imagebutton:
+                    idle "phone.png"
+                    hover "phone_hover.png"
+                    action ShowMenu("phoneUI")

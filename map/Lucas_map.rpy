@@ -1,3 +1,10 @@
+label lucas_mansion:
+    if day != 0 and chapter != 3:
+        "{cps=25}I have no business there..."
+        return
+    else:
+        jump lobby
+
 label lobby:
     scene lobby
     with dissolve

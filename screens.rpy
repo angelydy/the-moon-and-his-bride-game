@@ -249,12 +249,7 @@ screen quick_menu():
         xalign 0.97
         ypos 20
         spacing 50
-
-        imagebutton:
-                idle "phone.png"
-                hover "phone_hover.png"
-                action ShowMenu("phoneUI")
-
+        
     if quick_menu:
 
         hbox:
@@ -304,7 +299,7 @@ screen quick_menu():
                 idle "qsave.png"
                 hovered [Play("sound", "audio/click.wav")]
                 action QuickSave()
-            
+
             imagebutton:
                 idle "qload.png"
                 hovered [Play("sound", "audio/click.wav")]
