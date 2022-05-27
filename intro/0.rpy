@@ -29,6 +29,7 @@ label day_0:
         with eye_open
         scene player_bedroom day
         #alarm sound effect
+        play music "alarm_morning0.mp3"
         mc "{cps=25}*Hnngh*"
         mc "{cps=25}It's morning already..."
 
@@ -46,6 +47,7 @@ label day_0:
             scene bath
             with dissolve
             #bath sound effect
+            play music "bathing_sound.mp3"
             "{cps=25}My name is {color=cc6600}[mc]{/color}"
             "{cps=25}I am a just your typical simple person {p}trying to get by through college"
             "{cps=25}I study in the morning till afternoon"
@@ -58,6 +60,7 @@ label day_0:
             scene breakfast
             with dissolve
             #eating sound effect
+            play music "eating_sound.mp3"
             "{cps=25}My name is {color=cc6600}[mc]{/color}"
             "{cps=25}I am a just your typical simple person {p}trying to get by through college"
             "{cps=25}I study in the morning till afternoon"
@@ -75,6 +78,7 @@ label day_0:
             "(Opens the TV)"
             scene tv open hand
             scene tv open
+            play music "tv_voice.mp3"
             "{color=#FFF}Broadcaster{/color}" "{cps=25}Breaking News!{p} There seems to be an upcoming Blue Moon this week..."
             "{color=#FFF}Broadcaster{/color}" "{cps=25}We all know that Blue Moon only occurs every 33 months, 41 times per century or about every 19 years.
             Tell us your thought about this..."
@@ -120,6 +124,7 @@ label day_0:
                 scene schoolfront day
                 with dissolve
                 #Birds Sound effect
+                play music "bird_chirping.mp3"
                 uk "{cps=25}[mc] over here!"
                 "(You looked at where the voice came from)"
                 #show Jenny amazed
@@ -144,6 +149,7 @@ label day_0:
                 "{cps=25}But Laura and Jenny are more close to each other. They're bestfriends for a long a time"
                 hide laura pissed with dissolve
                 #bellring sound effect
+                play music "school_bell.mp3"
                 jn "{cps=25}Continue your fight later. {p}We should head to the class"
 
 
@@ -372,6 +378,7 @@ label day_0:
         scene black
         with dissolve
         "(Time passes by until the school beng rings)"
+        play music "school_bell.mp3"
         centered "{color=#FFF}Afternoon{/color}" with fade
         scene classroom noon
         with dissolve
