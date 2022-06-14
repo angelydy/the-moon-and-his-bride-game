@@ -16,9 +16,8 @@ init python:
 ## GUI Configuration Variables
 ################################################################################
 
-
 ## Colors ######################################################################
-##
+##d
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
@@ -90,9 +89,13 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-#define gui.main_menu_background = Movie(play = "gui/videoBG.ogv")
-define gui.main_menu_background = "gui/main_menu.jpg"
+define gui.main_menu_background = Movie(play = "gui/main_menu.webm")
+#define gui.main_menu_background = "gui/main_menu.jpg"
 define gui.game_menu_background = u'#000000'
+
+## Mouse Arrow #################################################################
+define config.mouse = { }
+define config.mouse['default'] = [ ( "images/cursor.png", 0, 0) ]
 
 
 ## Dialogue ####################################################################

@@ -8,7 +8,6 @@ Developers:
 - [Lance Reiniel Taganas]
 - [Kevin Ho]
 - [Mark Ian Pinpin]
-- [Jerico David Alcantara]
 - [Misael Sicat Rodrin]
 - [KhimRazel Reyes]
 

@@ -1,42 +1,40 @@
 label day_cycle:
+    hide screen phone
     if energy == 15 or energy == 0:
         default location = "home"
         default subloc = "home"
-    show screen phone
-    if energy == 15:
-        call morning
+        if energy == 15:
+            call morning
+        elif energy == 0:
+            call midnight
     elif energy == 10:
         call afternoon
     elif energy == 5:
         call evening
-    elif energy == 0:
-        call midnight
+
 
 label morning:
+    hide screen phone
     scene black with dissolve
     centered "{color=#FFF}Morning{/color}" with fade
-    if day == 1:
-        call morning_1
-    $ energy -= 5
-    jump day_cycle
+    jump location
 
 label afternoon:
+    hide screen phone
     scene black with dissolve
     centered "{color=#FFF}Afternoon{/color}" with fade
-    if day == 1:
-        call afternoon_1
-    $ energy -= 5
-    jump day_cycle
+    jump location
 
 label evening:
+    hide screen phone
     scene black with dissolve
     centered "{color=#FFF}Evening{/color}" with fade
-    if day == 1:
-        call evening_1
-    $ energy -= 5
-    jump day_cycle
+    if talk_to_laura.shouldShow():
+        return
+    jump location
 
 label midnight:
+    hide screen phone
     scene black with dissolve
     centered "{color=#FFF}Midnight{/color}" with fade
-    call home
+    jump location

@@ -1,7 +1,8 @@
 label lucas_mansion:
+    hide screen phone
     if day != 0 and chapter != 3:
         "{cps=25}I have no business there..."
-        return
+        jump location
     else:
         jump lobby
 
@@ -49,7 +50,7 @@ label restroom1:
             jump dining_room
 
 label pool:
-    scene pool night
+    scene pool
     with dissolve
     menu:
         "Go back":

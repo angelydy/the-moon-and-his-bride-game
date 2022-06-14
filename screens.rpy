@@ -240,7 +240,6 @@ style choice_button_text is default:
 ## menus.
 
 screen quick_menu():
-
     ## Ensure this appears on top of other screens.
     zorder 100
     hbox:
@@ -249,14 +248,13 @@ screen quick_menu():
         xalign 0.97
         ypos 20
         spacing 50
-        
-    if quick_menu:
 
+    if quick_menu:
         hbox:
             style_prefix "quick"
 
             xalign 0.85
-            yalign 0.755
+            yalign 0.975
             spacing 40
 
             ##textbutton _("Back") action Rollback()
@@ -1473,21 +1471,16 @@ style pref_vbox:
 ## that uses fewer and bigger buttons that are easier to touch.
 screen quick_menu():
     variant "touch"
+    zorder 50
+    hbox:
+        style_prefix "quick"
+        xalign 0.5
+        yalign 1.0
 
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
+        textbutton _("Back") action Rollback()
+        textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+        textbutton _("Auto") action Preference("auto-forward", "toggle")
+        textbutton _("Menu") action ShowMenu()
 
 
 style window:

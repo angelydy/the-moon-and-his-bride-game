@@ -30,7 +30,7 @@ define config.version = "1.0"
 
 define gui.about = _p("""Developed by:
 
-Mark Sapon, Lance Reiniel Taganas, Jam Claire Dinlasan, Angely Dy, Kevin Ho, Mark Ian Pinpin, Jerico David Alcantara, Misael Sicat Rodrin, KhimRazel Reyes.
+Mark Sapon, Lance Reiniel Taganas, Jam Claire Dinlasan, Angely Dy, Kevin Ho, Mark Ian Pinpin, Misael Sicat Rodrin, KhimRazel Reyes.
 """)
 
 ## A short name for the game used for executables and directories in the built
@@ -152,7 +152,6 @@ define config.save_directory = "COSC70-1649746461"
 
 define config.window_icon = "gui/window_icon.png"
 
-
 ## Build configuration #########################################################
 ##
 ## This section controls how Ren'Py turns your project into distribution files.
@@ -194,6 +193,9 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
+
+
+
 
 
 ## A Google Play license key is required to download expansion files and perform
