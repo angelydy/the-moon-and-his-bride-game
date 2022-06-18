@@ -1,0 +1,4 @@
+Where you left off:
+- Setting up the items with Quest
+- Visuals
+- Connecting the Chapter into the locations

@@ -28,7 +28,7 @@ label day_0:
         $ name = renpy.input("What is your nickname? (If left empty name will be Owen)", length = 10)
         $ name = name.strip()
         if not name:
-            $ name = "Mike"
+            $ name = "Owen"
         centered "{color=#FFF}(You will be given a choice. What you choose from here on out affects the outcome of the game){/color}" with fade
         scene white
         with eye_open
@@ -116,19 +116,23 @@ label day_0:
                 "(You looked at where the voice came from)"
                 show laura angry with dissolve
                 uk "{cps=25}How many times do I need to tell you not to be late! {p}This is a group work. So, one mistake and everyone will receive a minus point."
-                "{cps=25}This is Laura Godfrey. {p}She's like a living speaker who always says what's on her mind, but she's a responsible student
-                is quite a famous person around the school."
+                "{cps=25}This is Laura Godfrey. {p}She's like a living speaker who always says what's on her mind, but she's a responsible student"
+                "{cps=25}And she's quite a famous person around the school..."
                 "{cps=25}She's totally hooked up on social media and when it comes to listening to humor... {p}She's always up to date"
                 hide laura angry with dissolve
-                #show Jenny worried
+
+                show jenny neutral with dissolve
                 uk "{cps=25}Laura... {p}Uhm... please don't scold [mc] {p}I'm sure that [mc] tried his best {p}Right [mc]?"
                 "{cps=25}This is Jenny Williams, {p}She's always sweet, kind, caring, and a very thoughtful person. She's like a motherly figure towards her friends."
                 "{cps=25}She's also a writer {p}She wrote the best selling book of the year and became an award winning author"
-                #show Jenny neutral
+
+                hide jenny neutral with dissolve
+                show jenny happy at right with dissolve
                 show laura neutral as laura2 at left with dissolve
                 "{cps=25}Laura, Jenny and me are child hood friends. {p}We grew up together, constantly making fun of each other."
                 "{cps=25}But Laura and Jenny are closer to each other. They're like a mother and her child."
                 stop music
+                hide jenny happy at right with dissolve
 
             else:
                 scene school morning
@@ -138,31 +142,40 @@ label day_0:
                 uk "{cps=25}[mc] over here!"
                 stop music
                 "(You looked at where the voice came from)"
-                #show Jenny amazed
+
+                show jenny surprised with dissolve
                 play music "/audio/classroom_0.mp3"
                 uk "{cps=25}You came!"
                 "{cps=25}This is Jenny Williams, {p}She's always sweet, kind, caring, and a very thoughtful person. She's like a motherly figure towards her friends."
                 "{cps=25}She's also a writer {p}She wrote the best selling book of the year and became an award winning author"
                 uk "{cps=25}Hey DOFUS! {p}I really thought you would come late!"
+                hide jenny surprised with dissolve
                 show laura neutral with dissolve
-                "{cps=25}This is Laura Godfrey. {p}She's like a living speaker who always says what's on her mind, but she's a responsible student
-                is quite a famous person around the school."
+                "{cps=25}This is Laura Godfrey. {p}She's like a living speaker who always says what's on her mind, but she's a responsible student"
+                "{cps=25}And she's quite a famous person around the school..."
                 "{cps=25}She's totally hooked up on social media and when it comes to listening to humor... {p}She's always up to date"
-                #show Jenny
                 hide laura neutral with dissolve
+                show jenny happy with dissolve
                 jn "{cps=25}Laura... that's really ruuude"
                 jn "{cps=25}[mc] really tried his best to come early!"
                 jn "{cps=25}Right [mc]?"
                 mc "{cps=25}Yeah, I did... It's early in the morning Laura and you're yelling already {p}Give the birds a break for godsake"
-                show laura pissed at left with dissolve
+                hide jenny happy with dissolve
+                show laura pissed with dissolve
                 lg "{cps=25}Want to die early morning?"
+                hide laura pissed with dissolve
+                show laura neutral at left with dissolve
+                show jenny happy at right with dissolve
                 "{cps=25}Laura, Jenny and me are child hood friends. {p}We grew up together, constantly making fun of each other."
                 "{cps=25}But Laura and Jenny are closer to each other. They were best friends for a long time."
-                hide laura pissed with dissolve
                 stop music
                 #bellring sound effect
                 play music "/audio/school_bell.mp3"
+                hide laura neutral at left with dissolve
+                hide jenny happy at right with dissolve
+                show jenny neutral at right with dissolve
                 jn "{cps=25}Continue your fight later. {p}We should head to the class."
+                hide jenny neutral at right with dissolve
                 stop music
 
 
@@ -177,11 +190,11 @@ label day_0:
             "{cps=25}This is Jake {p}Jenny's cousin; he's similar to Laura but different at the same time."
             "{cps=25}They're both loud, but the only difference is that Jake is irresponsible, so that's another reason why Laura and Jake don't get along."
             hide jake smiling with dissolve
-            #show Jenny concerned
+            show jenny angry at left with dissolve
             jn "{cps=25}But... Isn't that wrong?"
             show jake bragging as jakebragging at right with moveinright
             jk "{cps=25}Well.. {p}It isn't cutting classes when there are no classes, right?"
-            show laura pissed as laurapissed at left with moveinleft
+            show laura pissed as laurapissed at center with moveinleft
             lg "{cps=25}Shut up jake. {p}Don't listen to him, Jenny, or you'll end up in the guidance."
             jk "{cps=25}Sheesh... {p}You need to loosen up once in a while, Laura. {p}You can't have fun when you can't take a risk, right Jenny?"
             jn "{cps=25}I don't know..."
@@ -190,19 +203,27 @@ label day_0:
             "{cps=25}The main reason Jake and Laura don't get along is because they're like a devil and angel, influencing Jenny's actions."
             hide laura pissed as laurapissed at left with dissolve
             hide jake bragging as jakebragging at right with dissolve
-            show jake bragging at center
+            hide jenny angry at left with dissolve
+            show jake bragging at left
             jk "{cps=25}Come on... It's not like our professor will suddenly be behind my back."
             stop music fadeout 1.0
+            show prof with dissolve
             "{color=#ffffff}Professor{/color}" "{cps=25}What is it, Mr. Jake Williams? {p}I heard you wanted to go to the canteen."
+            hide jake bragging at left
+            hide prof with dissolve
+            show prof at left with dissolve
             show jake nervous with dissolve
             jk "{cps=25}No sir {p}I was... {p}Uhmm..."
             jk "{cps=25}talking about... {p}I'm thinking about volunteering in the canteen, sir!"
-            hide jake nervous with dissolve
             "{color=#ffffff}Professor{/color}" "{cps=25}Very well, during the afternoon, head out to the canteen and tell them I sent you to volunteer."
-            #show Jenny and Laura chuckles
+            hide jake nervous with dissolve
+            hide prof at left with dissolve
             show laura chuckle as laurachuckle at left with dissolve
+            show jenny happy at right with dissolve
             "(Jenny and Laura chuckles)"
             hide laura chuckle as laurachuckle at left with dissolve
+            hide jenny happy at right with dissolve
+            show prof at center with moveinleft
             "{color=#ffffff}Professor{/color}" "{cps=25}Everyone take a sit so we can start"
             scene black
             with dissolve
@@ -220,12 +241,14 @@ label day_0:
             lg "{cps=25}Gosh... listening to Sir made me hungry"
             lg "{cps=25}Jenny let's go to the canteen?"
             hide laura angry with dissolve
+            show jenny happy with moveinleft
             jn "{cps=25}Suuure"
             #show Jenny shy
             jn "{cps=25}Uhm... {p}[mc]?"
             jn "{cps=25}Would you like to come with us?"
             mc "{cps=25}I..."
             with vpunch
+            hide jenny happy with moveinleft
             show jake nervous
             jk "{cps=25}YO!{p}[mc]!"
             jk "{cps=25}DUDE CAN YOU HELP ME?"
@@ -263,7 +286,7 @@ label day_0:
                 show jake happy with dissolve
                 jk "{cps=25}Thanks bro you really did me a solid"
                 jk "{cps=25}Anyways, we're done here let's head back to Jenny and Laura"
-                scene black
+                scene canteen day
                 with fade
                 "(You meet up with Jenny and Laura)"
                 jump justinecomes_01
@@ -273,36 +296,39 @@ label day_0:
                 hide jake nervous with fade
                 "(Jake Left)"
                 #show jenny
+                show jenny neutral at left with moveinleft
                 jn "{cps=25}I feel bad for Jake"
                 show laura neutral with dissolve
                 lg "{cps=25}Well he asked for it..."
                 lg "{cps=25}Let's go?"
-                hide laura neutral with dissolve
-                scene canteen morning
-                with dissolve
+                scene canteen morning with dissolve
                 play music "/audio/chatters_0.mp3"
+                show laura neutral with dissolve
+                show jenny neutral at left with dissolve
                 "(Time passed by eating together while chatting)"
                 "(A random person approached Jenny)"
-                show lucas happy with dissolve
+                show lucas happy at right with moveinright
                 uk "{cps=25}Hey love..."
                 uk "{cps=25}I was just looking for you"
                 uk "{cps=25}Where you've been?"
-                hide lucas happy with dissolve
-                #show jenny
+                hide laura with dissolve
+                show jenny happy at left with moveinright
                 jn "{cps=25}I was just hanging out with my friends"
                 uk "{cps=25}I see..."
                 "(He looked towards you and then glanced at Jenny)"
-                jn "{cps=25}Oh sorry! {p}[mc] this is Lucas my boyfriend"
-                jn "{cps=25}Lucas this is [mc] my friend"
-                show lucas neutral with dissolve
+                show jenny surprised with dissolve
+                jn "{cps=25}Oh sorry! {p}[mc], this is Lucas, my boyfriend"
+                show jenny happy with dissolve
+                jn "{cps=25}Lucas this is [mc], my friend"
+                show lucas neutral at center with dissolve
                 ln "{cps=25}My name is Lucas"
+                hide jenny with dissolve
                 "(He offered a handshake)"
                 "(You and Lucas shook hands)"
+                show jenny happy at left with moveinleft
+                show lucas neutral at right with moveinleft
                 ln "{cps=25}So love, I'm going to hold a celebration party for your great success at the Mansion."
-                hide lucas neutral with dissolve
-                #show jenny sa right
                 jn "{cps=25}Can I invite anyone?"
-                #hide jenny sa right
                 show lucas happy with dissolve
                 ln "{cps=25}*chuckles*"
                 ln "{cps=25}Oh dear... you're really are adorable"
@@ -311,41 +337,42 @@ label day_0:
                 stop music
 
             label justinecomes_01:
-                scene canteen morning
-                with dissolve
                 play music "/audio/chatters_0.mp3"
-                show justine neutral at right with moveinleft
+                scene canteen day
+                show justine neutral at right with moveinright
                 uk "{cps=25}Lucas"
                 uk "{cps=25}Our council advisor is looking for us"
-                show lucas neutral with dissolve
+                show lucas neutral with moveinleft
                 ln "{cps=25}I got to go love, see you later"
                 if canteen0:
                     ln "{cps=25}Nice meeting you [mc]"
                 hide justine with moveoutright
-                hide lucas neutral with fade
+                hide lucas neutral with moveoutright
                 "(They left)"
-                show laura chuckle with dissolve
-                lg "{cps=25}Wow... He really loves you doesn't he?"
-                hide laura chuckle with dissolve
+                #show jenny at right with moveinleft
+                show laura chuckle at left with moveinleft
+                show jenny happy at right with moveinright
+                lg "{cps=25} Wow... He really loves you doesn't he?"
+                jn "{cps=25} Laura!"
+                lg "{cps=25} Yes dear?"
+                show laura neutral with dissolve
                 "(Justine approaches)"
-                show jake happy with moveinright
+                show jake happy with dissolve
                 jk "{cps=25}Hmmm..."
-                jk "{cps=25}Is that Lucas Norris and Justine Raymond?"
+                jk "{cps=25}Is that Lucas Norris and Justine Raymond? Who just came by here?"
                 mc "{cps=25}Who?"
                 jk "{cps=25}Lucas and Justine {p}they're like elites here in school"
                 hide jake with dissolve
                 #scene Lucas portrait
-                show laura neutral as lauraneautral at left with dissolve
+                show laura chuckle at left with moveinright
                 lg "{cps=25}Yeah, Lucas Norris {p}He's Jenny's boyfriend"
 
                 #show Jenny blush
-                jn "{cps=25}Laura!"
-                hide laura neutral as lauraneautral at left
-                show laura chuckle as laurachuckle at left
+                jn "{cps=25}Lauraaaaa"
+                show laura chuckle at left with dissolve
                 lg "{cps=25}Whaaat? just stating the facts {p}Anyways..."
                 #hide jenny
-                hide laura chuckle as laurachuckle at left with dissolve
-                show laura neutral with dissolve
+                show laura neutral at left with moveinleft
                 lg "{cps=25}Lucas is a \"people person\" if you ask me, which is the reason he became the president of the student council."
                 lg "{cps=25}He is very friendly, approachable, thoughtful, confident and very smart."
                 lg "{cps=25}Also, Lucas's recent project gained world wide attention because of its miraculously bringing dead mice back to life."
@@ -354,14 +381,16 @@ label day_0:
                 lg "{cps=25}He's the council vice president and as smart as Lucas, but they're like night and day."
                 #scene Justine portrait
                 hide laura
-                show jake bragging with dissolve
+                show jenny happy at left with moveinright
+                show jake bragging at right with moveinright
                 jk "{cps=25}But unlike Lucas, he isn't friendly; he always makes sarcastic comments and he is mostly known for his cold actions that are driven by logic and reason."
                 jk "{cps=25}Sometimes I feel more like an emotionless robot than a human."
                 jk "{cps=25}I wonder how they get along..."
                 show jake nervous with dissolve
                 jk "{cps=25}If I were you, I wouldn't even think of approaching Justine..."
                 mc "{cps=25}Why?"
-                jk "{cps=25}He has this scary reputation that he's dangerous and cunning {}Even delinquents don't want to mess with him."
+                jk "{cps=25}He has this scary reputation that he's dangerous and cunning {p}Even delinquents don't want to mess with him."
+                show jenny neutral at center with moveinright
                 show laura neutral at left with moveinleft
                 lg "{cps=25}I heard some rumors that he's a sadistic maniac who blackmails people."
                 show jake happy  with dissolve
@@ -372,10 +401,10 @@ label day_0:
                 lg "{cps=25}I'll kick his ass real hard to the point he can't poop for many years to come."
                 jk "{cps=25}Well... I wouldn't be surprised if Justine planned to kidnap Jenny or something."
                 with vpunch
-                show laura angry with dissolve
+                hide jenny with moveoutleft
+                show laura angry at center with moveinright
                 show jake nervous with dissolve
                 "(Laura kicked Jake's knee)"
-                #show Jake hurt
                 jk "{cps=25}OW!"
                 lg "{cps=25}That's not funny!"
                 jk "{cps=25}I was just JOKING!"
@@ -390,6 +419,7 @@ label day_0:
 
                 show laura neutral with dissolve
                 show jake happy with dissolve
+                show jenny happy at left with moveinleft
                 jk "{cps=25}But when it comes to a fight, me and [mc] will be by your side, Jenny."
                 #show Jenny happy
                 jn "{cps=25}Thanks guys"
@@ -413,6 +443,7 @@ label day_0:
         lg "{cps=25}Hey idiot you're shouting like you won't come to school tommorow"
         show jake happy at right with dissolve
         jk "{cps=25}I know, I'm just living my life like school's about to end."
+        show jenny happy with moveinleft
         jn "{cps=25}Uhm... guys?"
         jn "{cps=25}Remember what Lucas said?"
         jk "{cps=25}Yeah?"
@@ -466,11 +497,13 @@ label day_0:
             hide jake with fade
             "(Jake Left)"
             show laura neutral at left with dissolve
+            show jenny neutral at right with dissolve
             lg "{cps=25}Yeah me too... {p}let's go home together Jenny?"
             jn "{cps=25}I think I'll pass for now Laura"
             lg "{cps=25}Okay sure, see you later?"
             jn "{cps=25}Lateeer"
-            hide laura at left with fade
+            hide laura with moveoutleft
+            show jenny happy at center with moveinleft
             "(Laura Left)"
             jn "{cps=25}Uhm... [mc]?"
             "{cps=25}Can you uhm... {p}come with me to the signing event?"
@@ -485,23 +518,19 @@ label day_0:
                     jump fansign_0
 
                 "Sorry I'll pass":
+                    show jenny neutral
                     mc "{cps=25}I need to prepare for the evening"
                     jn "{cps=25}Oh... okay sorry for if I botherd you"
                     jn "{cps=25}See you later, don't be late!"
                     jn "{cps=25}Take care on your way home"
                     "(You went home to prepare for the evening)"
-                    jump evening_0
+                    jump work_0
 
         else:
             jn "{cps=25}Anyways I'll be heading out to the signing event now {p}see you guys later"
             jump evening_0
 
-        label fansign_0:
-            scene black
-            with fade
-            "(You accompanied Jenny in the Fan sign event)"
-            call uc
-            jump evening_0
+
 
     label evening_0:
         scene black
@@ -521,6 +550,7 @@ label day_0:
                 lg "{cps=25}Pfft... boys will be boys..."
 
         #show Jenny in formal
+        show jenny happy with moveinright
         jn "{cps=25}You guys really came!"
         show laura surprised at left with dissolve
         lg "{cps=25}Why wouldn't we be?"
@@ -531,13 +561,16 @@ label day_0:
         show lucas happy with dissolve
         ln "{cps=25}Hey guys,"
         hide lucas
-        show jake happy at left with moveinleft
+        show jake happy with moveinleft
         jk "{cps=25}Yo Lucas"
-        show laura neutral with dissolve
+        show laura neutral at left with dissolve
         lg "{cps=25}Hey"
         show lucas happy at right with moveinright
         ln "{cps=25}Jenny was excitedly waiting for you guys to come right Jenny?"
         #show jenny
+        hide jake
+        show laura chuckle
+        show jenny happy with moveinleft
         jn "{cps=25}Lucaaaas!"
         ln "{cps=25}Alright alright, calm down love"
         ln "{cps=25}*chuckles*"
@@ -565,6 +598,7 @@ label day_0:
         ln "{cps=25}I'm sorry guys I won't be the one accompanying you tonight"
         ln "{cps=25}My love?"
         show lucas neutral at right with moveinleft
+        show jenny happy at left with moveinleft
         jn "{cps=25}Hmm yes?"
         ln "{cps=25}I'll be heading out to to greet our other guests"
         ln "{cps=25}Can you accompany our guests?"
@@ -669,7 +703,23 @@ label day_0:
             jump lobby
 
         label tour_0:
-            call uc
+            scene lobby with dissolve
+            "*Beep* *beep*"
+            mc"{cps=25} Almost forgot! It’s almost time for work..."
+            mc"{cps=25} Hmm..."
+            "(You look around for Laura)"
+            lg"{cps=25} Looking for me?"
+            show laura neutral with dissolve
+            mc"{cps=25} Yeah..."
+            mc"{cps=25} Tell Jenny that I'll be going now"
+            mc"{cps=25} I have work to do..."
+            show laura chuckle with dissolve
+            lg"{cps=25} Is there no fun in your life?"
+            mc"{cps=25} Ha... Ha..."
+            mc"{cps=25} Look I really wanted to stay but I also need to go to work... Emergencies"
+            show laura neutral with dissolve
+            lg"{cps=25} Okay, you take care [mc]"
+            mc"{cps=25} Thank you, see you tommorrow!"
             jump lobby
 
         label jaketalk_0:
@@ -751,13 +801,15 @@ label day_0:
             "(You left)"
             jump living_room
 
+    label work_0:
+        scene cafe with dissolve
+        "(You worked in the Cafe)"
+        jump midnight_0
+
     label midnight_0:
         scene black
         with dissolve
         play music "/audio/midnight_0.mp3"
-        if partychoice_0 == False:
-            centered "{color=#FFF}Evening{/color}" with fade
-            "(You spend your evening working)"
         centered "{color=#FFF}Night{/color}" with fade
         scene home evening
         with dissolve
@@ -769,4 +821,4 @@ label day_0:
         mc "{cps=25}Maybe I'm just being paranoid..."
         mc "{cps=25}I should take a rest..."
         stop music fadeout 0.5
-        return
+        jump day_1

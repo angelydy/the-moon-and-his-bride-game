@@ -1,0 +1,18 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+Before loading the script.
+WindowsError: [Error 267] The directory name is invalid: u'C:\\Users\\Admin\\Dropbox\\The Moon and His Bride\\game\\chapters\\intro\\0.rpy\\*.*'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\Admin\Desktop\renpy\renpy-7.4.11-sdk/renpy/bootstrap.py", line 331, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Admin\Desktop\renpy\renpy-7.4.11-sdk/renpy/main.py", line 398, in main
+    for fn in os.listdir(dir):
+WindowsError: [Error 267] The directory name is invalid: u'C:\\Users\\Admin\\Dropbox\\The Moon and His Bride\\game\\chapters\\intro\\0.rpy\\*.*'
+
+Windows-10-10.0.22000
+Ren'Py 7.4.11.2266
+ 
+Wed Jun 15 18:17:58 2022

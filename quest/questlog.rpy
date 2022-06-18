@@ -16,6 +16,6 @@ screen questlog:
         spacing 62
         xmaximum 650
 
-        for quest in my_quests.quest_list:
+        for quest in mq.quest_list:
             if not quest.completed and quest.available:
                 text "[quest.description] : [quest.name]"

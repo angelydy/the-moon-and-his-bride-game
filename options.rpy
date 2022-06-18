@@ -22,15 +22,19 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "3.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""Developed by:
-
-Mark Sapon, Lance Reiniel Taganas, Jam Claire Dinlasan, Angely Dy, Kevin Ho, Mark Ian Pinpin, Misael Sicat Rodrin, KhimRazel Reyes.
+define gui.about = _p("""Developed by: Group 5
+\n\n Head Programmer: Mark Sapon
+\n User Interface: Angely Dy
+\n Visual Artists: Lance Reiniel Taganas, Mark Ian Pinpin
+\n Story Board Director: Jam Claire Dinlasan
+\n Programmers: Kevin Ho, Misael Sicat Rodrin
+\n Grammar Checker: KhimRazel Reyes\n\n
 """)
 
 ## A short name for the game used for executables and directories in the built

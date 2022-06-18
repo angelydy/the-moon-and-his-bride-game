@@ -1,7 +1,7 @@
 init python:
     inv_page = 0
     class item:
-        def __init__(self, name, cost, image="", owned = False):
+        def __init__(self, name, cost = 0, image="", owned = False, physical = True):
             self.name = name
             self.cost = cost
             self.image = image
@@ -30,6 +30,8 @@ init python:
     cam = item("Camera", 15, image="/Items/camera.png")#100
     rec = item("Recorder", 15, image="/Items/recorder.png")#200
     lap = item("Laptop", 15, image="/Items/laptop.png")#500
+    usb = item("USB", 15, image="/Items/usb.png")
+    vidfile = item("Video",0, image="/Items/vidfile.png",physical = False)
 
     #Food
     meat = item("Meat", 15, image="/Items/meat.png")#50

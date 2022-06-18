@@ -9,15 +9,44 @@ init python:
         def addQuest(self, quest):
             self.quest_list.append(quest)
 
-default my_quests = QuestList()
+default mq = QuestList()
 
 #Adding the Quest to list
 label load_quest:
-    $ my_quests.addQuest(go_to_school)
-    $ my_quests.addQuest(go_to_class)
-    $ my_quests.addQuest(talk_to_jake)
-    $ my_quests.addQuest(go_to_afterclass)
-    $ my_quests.addQuest(talk_to_laura)
-    $ my_quests.addQuest(go_to_work)
-    $ my_quests.addQuest(evening_home)
+
+    ################### Introduction ###################
+
+    #Day 1
+    $ mq.addQuest(go_to_school)
+    $ mq.addQuest(go_to_class)
+    $ mq.addQuest(talk_to_jake)
+    $ mq.addQuest(go_to_afterclass)
+    $ mq.addQuest(talk_to_laura)
+    $ mq.addQuest(go_to_work)
+    $ mq.addQuest(evening_home)
+
+    #Day 2
+    $ mq.addQuest(go_to_school2)
+    $ mq.addQuest(talk_to_laura2)
+    $ mq.addQuest(visit_jake)
+    $ mq.addQuest(evening_home2)
+
+
+    ################### CHAPTER 1 ###################
+    $ mq.addQuest(e_hallway_ch1)
+    $ mq.addQuest(e_roam_ch1)
+    $ mq.addQuest(e_class_ch1)
+    $ mq.addQuest(e_hallway2_ch1)
+    $ mq.addQuest(cctv_ch1)
+    $ mq.addQuest(tweet_ch1)
+    $ mq.addQuest(e_cctv_ch1)
+    $ mq.addQuest(e_tweet_ch1)
+    $ mq.addQuest(cafe_ch1)
+    $ mq.addQuest(e_cafe_ch1)
+    $ mq.addQuest(raid_ch1)
+    $ mq.addQuest(start_raid_ch1)
+    $ mq.addQuest(start2_raid_ch1)
+    $ mq.addQuest(evidence_ch1)
+    $ mq.addQuest(chapter1_end)
+    $ mq.addQuest(chapter1_end2)
     return

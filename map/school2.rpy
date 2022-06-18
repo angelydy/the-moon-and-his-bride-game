@@ -15,8 +15,8 @@ label school:
         jump back
     elif subloc == "restroom":
         jump restroom
-    elif subloc == "hallway2d":
-        jump hallway2d
+    elif subloc == "hallway2f":
+        jump hallway2f
     elif subloc == "classroom":
         jump classroom
     elif subloc == "library":
@@ -36,11 +36,15 @@ label entrance:
         if go_to_school.shouldShow():
             call school_1
             show screen phone
+        elif go_to_school2.shouldShow():
+            call school_2
+            show screen phone
         menu:
-            "Talk to Laura" if not day == 1:
-                "Good morning"
-                lg "Good morning"
-                "..."
+            "Talk to Laura" if day == 2:
+                hide screen phone
+                if talk_to_laura2.shouldShow():
+                    call talk_laura
+                lg "..."
                 jump entrance
             "Hallway":
                 jump hallway1f
@@ -147,6 +151,12 @@ label gym:
     if energy <= 15 and energy > 10:
         scene gym morning with dissolve
         menu:
+            "Talk to Jake":
+                hide screen phone
+                jk"{cps=25} ..."
+                if start2_raid_ch1.shouldShow:
+                    call jaketalk_ch1
+                jump location
             "Locker Room":
                 jump locker
             "Go back":
@@ -202,19 +212,27 @@ label canteen:
     if energy <= 15 and energy > 10:
         scene canteen morning with dissolve
         menu:
+            "Talk to Laura" if raid_ch1.shouldShow():
+                call canteen2_ch1
+                jump location
             "Back Room":
                 jump back
             "Go back":
                 jump hallway1f
+
     elif energy <= 10 and energy > 5:
         scene canteen afternoon with dissolve
         menu:
             "Talk to Jake" if talk_to_jake.shouldShow():
                 jump canteen_1
+            "Talk to Lucas" if e_roam_ch1.shouldShow():
+                call canteen_ch1
+                jump location
             "Back Room":
                 jump back
             "Go back":
                 jump hallway1f
+
     elif energy <= 5 and energy != 0:
         scene canteen evening with dissolve
         menu:
@@ -222,6 +240,7 @@ label canteen:
                 jump back
             "Go back":
                 jump hallway1f
+
     elif energy <= 0:
         jump home
 
@@ -256,6 +275,14 @@ label hallway2f:
     if energy <= 15 and energy > 10:
         scene hallway morning with dissolve
         menu:
+            "Talk to Laura" if e_hallway_ch1.shouldShow():
+                if e_hallway_ch1.shouldShow():
+                    call school_ch1
+                    jump location
+                elif e_hallway2_ch1.shouldShow():
+                    call hallway_ch1
+                    jump location
+                jump location
             "Classroom":
                 jump classroom
             "Library":
@@ -266,7 +293,13 @@ label hallway2f:
                 jump hallway1f
     elif energy <= 10 and energy > 5:
         scene hallway afternoon with dissolve
+        if e_tweet_ch1.shouldShow():
+            call f2hallway_ch1
+            jump location
         menu:
+            "Talk to Laura" if e_hallway2_ch1.shouldShow():
+                call hallway_ch1
+                jump location
             "Classroom":
                 jump classroom
             "Library":
@@ -300,22 +333,33 @@ label classroom:
             jump classroom_1
         menu:
             "Go to Class":
+                if e_class_ch1.shouldShow():
+                    call classroom_ch1
+                    jump location
                 $ energy -= 5
+                jump classroom
             "Go back":
                 jump hallway2f
     elif energy <= 10 and energy > 5:
         scene classroom afternoon with dissolve
         if go_to_afterclass.shouldShow():
             menu:
-                "Go to Class" if go_to_afterclass.shouldShow():
+                "Go to Class" if go_to_afterclass.shouldShow() or e_class_ch1.shouldShow():
                     hide screen phone
+                    scene black with dissolve
                     "(You spend your time studying)"
-                    $ go_to_afterclass.completed = True
-                    $ talk_to_laura.available = True
+                    if go_to_afterclass.shouldShow():
+                        $ go_to_afterclass.completed = True
+                        $ talk_to_laura.available = True
+                    elif e_class_ch1.shouldShow():
+                        call classroom_ch1
                     $ energy -= 3
                     jump location
         menu:
             "Go to Class" if day != 1:
+                hide screen phone
+                scene black with dissolve
+                "(You spend your time studying)"
                 $ energy -= 5
                 jump day_cycle
             "Go back":
@@ -342,8 +386,16 @@ label library:
     elif energy <= 10 and energy > 5:
         scene library afternoon with dissolve
         menu:
-            "Talk to Laura" if talk_to_laura.shouldShow():
-                jump library_1
+            "Talk to Laura":
+                hide screen phone
+                lg "..."
+                if talk_to_laura.shouldShow():
+                    jump library_1
+                elif tweet_ch1.shouldShow():
+                    call library_ch1
+                elif start2_raid_ch1.shouldShow():
+                    call lauratalk_ch1
+                jump location
             "Go back":
                 jump hallway2f
     elif energy <= 5 and energy != 0:

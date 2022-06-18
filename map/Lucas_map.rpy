@@ -1,8 +1,45 @@
 label lucas_mansion:
     hide screen phone
-    if day != 0 and chapter != 3:
+    if chapter != 1:
         "{cps=25}I have no business there..."
         jump location
+    elif chapter == 1:
+        $ location == "lucas"
+        th"{cps=25} The place looks heavily guarded…"
+        th"{cps=25} There are police and security guards everywhere, I wonder if they will let me pass"
+        menu:
+            "Walk to the front":
+                call security
+            "Sneak around":
+                call sneak_around
+
+        jump location
+
+        label security:
+            "Security" "{cps=25} Sir you are not permitted to go through"
+            menu:
+                "I’ll head back":
+                    return
+                "I’m Lucas’s friend":
+                    call friend
+                    return
+
+        label friend:
+            "Security" "{cps=25} We can’t let you in unless Mr. Lucas said so and Mr. Lucas hasn’t gone home yet"
+            mc"{cps=25} Hmm..."
+            th"{cps=25} I need Lucas’s permission but where could he be?"
+            return
+
+        label sneak_around:
+                scene black with dissolve
+                "(You sneaked around)"
+                "Police" "{cps=25}What are you doing?"
+                mc"{cps=25} Shit!"
+                "Police" "{cps=25} This is a private area and site of investigation do not go any further"
+                mc"{cps=25} I’m sorry officer"
+                th"{cps=25} I need a distraction to get inside and someone to accompany me once I’m inside"
+                return
+
     else:
         jump lobby
 
@@ -20,6 +57,11 @@ label lobby:
             "Out of limit"
             jump lobby
             #jump second_floor
+        "Head out":
+            if chapter == 0:
+                scene black with dissolve
+                "(You left the Party)"
+                jump work_0
 
 label dining_room:
     scene dining room

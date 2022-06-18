@@ -5,19 +5,21 @@ label tutorial:
     image inventory_desc = "inventory desc.png"
     window hide
     if selection == 0:
-        jump menudesc
+        call menudesc
+        return
 
     if selection == 1:
-        jump phone
+        call phone
+        return
 
     elif selection == 2:
         if inv:
-            jump invdesc
+            call invdesc
         return
 
     elif selection == 3:
         if tskip:
-            jump timedesc
+            call timedesc
         return
     else:
         return

@@ -57,13 +57,13 @@ screen mapUI():
                 action [Hide("mapUI"),Jump("lucas_mansion")]
                 xalign 0.435
                 yalign 0.495
-
-        imagebutton:
-                idle "locations/mall.png"
-                hover "locations/mall_hover.png"
-                action [Hide("mapUI"),Jump("mall")]
-                xalign 0.135
-                yalign 0.265
+        if mall == True:
+            imagebutton:
+                    idle "locations/mall.png"
+                    hover "locations/mall_hover.png"
+                    action [Hide("mapUI"),Jump("mall")]
+                    xalign 0.135
+                    yalign 0.265
 
         imagebutton:
                 idle "locations/cafe.png"
@@ -78,13 +78,14 @@ screen mapUI():
                 action [Hide("mapUI"),Jump("home")]
                 xalign 0.895
                 yalign 0.395
-        
-        imagebutton:
-                idle "locations/police.png"
-                hover "locations/police_hover.png"
-                action NullAction()
-                xalign 0.715
-                yalign 0.798
+
+        if pstation == True:
+            imagebutton:
+                    idle "locations/police.png"
+                    hover "locations/police_hover.png"
+                    action [Hide("mapUI"),Jump("pstation")]
+                    xalign 0.715
+                    yalign 0.798
 
 
 screen phone():
@@ -242,11 +243,10 @@ screen thomasUI():
 screen jennyUI():
         modal True
         add "characterScreen/jennyInfo.png"
-        
+
         imagebutton:
                 idle "exit.png"
                 hover "exit_hover.png"
                 action [Hide("jennyUI"),Show("charactersUI")]
                 xalign 0.97
                 ypos 65
-
