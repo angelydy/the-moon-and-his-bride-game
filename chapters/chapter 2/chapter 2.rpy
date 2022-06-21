@@ -1,14 +1,17 @@
 label chapter_2:
 
   hide screen phone
+  scene canteen day
   mc "{cps=25} There are lots of people in the party… Do you think janitors will recognize jenny?"
   show jake bragging with dissolve
   jk "{cps=25} This specific janitor knows Jenny. I heard he’s the head janitor in Lucas’s mansion."
-  jk "{cps=25} And of course, he knows Jenny. She’s Lucas’s girlfriend. I also remember this. I heard him called Jenny. {p}I felt dizzy so I didn’t saw why? The next thing I knew, Jenny was gone from my sight."
+  jk "{cps=25} And of course, he knows Jenny. She’s Lucas’s girlfriend. I also remember this. I heard him called Jenny."
+  jk"{cps=25} I felt dizzy so I didn’t saw why? The next thing I knew, Jenny was gone from my sight."
   show laura neutral at left with moveinleft
   lg "{cps=25} We still don’t know when was the exact time she was last seen. Jake has a point. Janitors are always the last people to leave the place. Maybe Jenny was in the party until the end.."
   mc "{cps=25} So… are we going to find the janitor?"
   lg "{cps=25} why not? It won’t hurt to take a chance."
+  show jake happy
   jk "{cps=25} He must be in Lucas’s mansion."
   lg "{cps=25} If we went there… what are we gonna say to Lucas if he asks us? We cannot say that we went there for the janitor."
   mc "{cps=25} Why not?"
@@ -30,35 +33,44 @@ label chapter_2:
 #Lucas’s House~
 #afternoon
 
+  scene mansion entrance afternoon
+  show laura neutral at left with moveinleft
   lg "{cps=25} Are we ready?"
+  show jake happy at right with moveinright
   jk "{cps=25} I am.."
   mc "{cps=25} Let’s go… Call Lucas.."
   lg "{cps=25} (get the phone and call lucas) Hey, Lucas! How are you?"
   hide laura
   hide jake
+  scene master bedroom
   show lucas neutral with dissolve
   ln "{cps=25} (on the other line) Laura.. Still the same.. All is well.. Why?"
   ln "{cps=25} Where are you?{p} Home?"
   hide lucas 
+  scene mansion entrance afternoon
   show laura neutral at left with dissolve
   show jake happy with dissolve
   lg "{cps=25} We’re outside of your house… Can you come out?"
   hide laura
   hide jake
+  scene master bedroom
   show lucas serious with dissolve
   ln "{cps=25} What are you doing there.. Wait for me in the living room…"
   hide lucas
   show laura neutral at left with moveinleft
   show jake happy with dissolve
+  scene mansion entrance afternoon
 
   "(phone call ended)"
 
   mc "{cps=25} Let’s go…"
+  scene black
+  with fade
   hide laura neutral with moveoutleft
   hide jake bragging with moveoutright
 
   #lucas' living room
-
+  scene living room
   show laura neutral at left with moveinleft
   show jake tired at right with moveinright
   lg "{cps=25} Lucas.."
@@ -108,6 +120,7 @@ label chapter_2:
   #~Lucas’s garden~
 
   hide jake  
+  scene garden
   show laura neutral at left with moveinleft
   mc"{cps=25} Where are we going to start?"
   lg"{cps=25} No one’s here in the garden.. Where are the maids?"
@@ -187,6 +200,7 @@ label chapter_2:
 
   #~outside lucas’s house~
 
+  scene mansion entrance
   show jake nervous
   show laura neutral at left with moveinleft
   mc"{cps=25} What happened?"
@@ -216,6 +230,7 @@ label chapter_2:
   #~MC’s house~
   #~Evening~
 
+  scene player_bedroom night
   mc"{cps=25} The moon looks surreal… I want to stare at you all night but I still have work… "
 
   menu:
@@ -225,23 +240,34 @@ label chapter_2:
       jump dinner_2
 
   label bath_2: 
+    scene bath
     "TAKING A SHOWER"
     scene black
     with fade
 
   label dinner_2:
+    scene kitchen
     mc"{cps=25} I can call Laura while eating"
     "(Calling Laura…)"
     #insert sound effect of calling
     lg"{cps=25} Hello?"
     mc"{cps=25} Laura… Have you thought of the plan?"
+    scene mall grocery
+    show laura neutral with dissolve
     lg"{cps=25} Uhm.. can I call you later?"
+    scene kitchen
+    hide laura
     mc"{cps=25} Why? Are you busy?"
+    scene mall grocery
+    show laura neutral
     lg"{cps=25} Yeah.. kind of.. sorry"
+    scene kitchen
+    hide laura
     mc"{cps=25} Sure.. let’s just meet tomorrow.."
     lg"{cps=25} Yeah. Bye.."
     "(phone call ended)"
     mc"{cps=25} I think she’s so busy… I’ll just go to work…"
+    scene black with fade
 
     #~GO TO WORK~
     
@@ -250,6 +276,7 @@ label chapter_2:
     
     #~Morning~
     #~Living room
+    scene home morning
     show jake nervous at right with dissolve
     show laura neutral at left with dissolve
     mc"{cps=25} How are you both?"
@@ -330,35 +357,62 @@ label chapter_2:
 #~Buy a flash drive~
 #~Go home~
 
+    scene home morning
     show laura neutral at left with moveinleft
     mc"{cps=25} Do we have everything we need?"
     show jake happy at right with moveinright
     jk"{cps=25} yeah.. I guess so.."
     lg"{cps=25} Should we go there now?"
     jk"{cps=25} Nah.. It’s too early.. The securities are probably on the stand… Let’s wait until, lunch time…"
+    scene black with fade
 
     #~the user can use the day time feature to change the time to afternoon~
     #~afternoon~
     #~go to Lucas’s mansion~
     
+    scene mall
     mc"{cps=25} Laura, call Lucas.. Ask him where he is…"
+    show laura neutral with moveinleft
     lg"{cps=25} Sure.."
     "(phone rings then call answered)"
     hide jake with dissolve
-    show lucas happy at right with moveinright
     lg"{cps=25} Hi, Lucas… Where are you?"
+    scene lucas library
+    show lucas happy with moveinright
     ln"{cps=25} In the library, why?"
+    scene mall
+    show laura neutral
     lg"{cps=25} School library?"
+    scene lucas library
+    show lucas neutral
     ln"{cps=25} No.. In our library.. In the mansion specifically.."
+    scene mall
+    show laura neutral
     lg"{cps=25} Ahhh okay.."
+    scene lucas library
+    show lucas neutral
     ln"{cps=25} Why?"
-    ln"{cps=25} Nothing.. I am in the mall.. I thought I saw you…"
+    scene mall
+    show laura neutral
+    lg"{cps=25} Nothing.. I am in the mall.. I thought I saw you…"
+    scene lucas library
+    show lucas neutral
     ln"{cps=25} nah.. I’m busy with our project.. "
+    scene mall
+    show laura neutral
     lg"{cps=25} Okay.. good luck!"
+    scene lucas library
+    show lucas neutral
     ln"{cps=25} Thanks.. I gotta go.."
+    scene mall
+    show laura neutral
     lg"{cps=25} Sure.. bye,,"
+    scene lucas library
+    show lucas neutral
     ln"{cps=25} Bye.."
     hide lucas with moveoutright
+    scene mall
+    show laura neutral at left with moveinleft
     "(phone call ended)"
     show jake happy at right with moveinright
     lg"{cps=25} he’s in the library.. "
@@ -366,10 +420,12 @@ label chapter_2:
     jk"{cps=25} Let’s go.. the way is clear.. Guards might taking a lunch.. Let’s go…"
     hide laura with moveoutleft
     hide jake with moveoutright
+    scene black with fade
 
     #~sneak to the master bedroom~
     #~master bedroom~
 
+    scene master bedroom
     show laura neutral at left with moveinleft
     show jake happy at right with moveinright
     mc"{cps=25} That was freaking crazy…"
@@ -400,6 +456,7 @@ label chapter_2:
     with fade
 
     #~MC’s house~
+    scene player_bedroom night
     show laura chuckle at left with moveinleft
     lg"{cps=25} That was crazy…"
     show jake happy at right with moveinright
@@ -457,12 +514,13 @@ label chapter_2:
     #~sleep~
     #~morning~
     #~School~
-    mc"{cps=25} (thinking) laura might be in the room…"
-
-    #~Go to the classroom~
-    mc "{cps=25} (thinking) Laura isn’t here.. It’s almost time.. She might be in the library…"
+    scene classroom morning
+    th "{cps=25} laura might be in the room…"
+    th "{cps=25} Laura isn’t here.. It’s almost time.. She might be in the library…"
+    scene black with fade
 
     #~Go to the library~
+    scene library morning
     show laura neutral
     mc"{cps=25}There you are!"
     lg"{cps=25} What are you doing here?"
@@ -496,14 +554,16 @@ label chapter_2:
     with fade
 
     #~go to the room~
+    scene classroom morning
     "Good morning, everyone! Today, you are tasked to play basketball and practice ball control… We are going to the gym with other sections.. Is that okay?"
     "Class: Yes sir.."
     "First, get a one-fourth sheet of pad paper.. write you name, age, cellphone number, and address… It will be collected and given to your adviser… I’m giving you five minutes to pass it… "
     mc"{cps=25} Laura, may I have one?"
     show laura neutral
     lg"{cps=25} sure…."
-    
-    #~gym~
+    scene black with fade
+
+    scene gym morning    
     lg"{cps=25} Where’s your extra uniform.."
     mc"{cps=25} Locker.. wait, I’ll get it…"
 

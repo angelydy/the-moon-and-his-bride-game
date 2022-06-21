@@ -54,7 +54,7 @@ screen mapUI():
         imagebutton:
                 idle "locations/home.png"
                 hover "locations/home_hover.png"
-                action [Hide("mapUI"),Jump("lucas_mansion")]
+                action [Hide("mapUI"),Jump("lucas_mansion_time")]
                 xalign 0.435
                 yalign 0.495
         if mall == True:

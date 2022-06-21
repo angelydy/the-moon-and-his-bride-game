@@ -23,6 +23,7 @@ label eshop:
     show electronics clerk with dissolve
     "{cps=25}Hi what would you like to buy?"
     menu:
+
         "[cam.name]" if not cam.owned:
             menu:
                 "Would you like to buy a [cam.name]"
@@ -59,13 +60,54 @@ label eshop:
 
         "[lap.name]" if not lap.owned:
             menu:
-                "Would you like to buy a [lap.name]"
+                "Would you like to buy a [lap.name] ([lap.cost])"
                 "Yes":
                     if inventory.buy(lap):
                         "Thank you for your purchase!"
+                        if chapter1_end.shouldShow():
+                            $ chapter1_end.completed = True
+                            $ chapter1_end2.available = True
                         $ renpy.block_rollback()
                         call buy_more
                         jump eshop
+                    else:
+                        "Not enough money"
+                        call buy_more
+                        jump eshop
+                "No":
+                    call buy_more
+                    jump eshop
+
+        "[usb.name]" if not usb.owned:
+            menu:
+                "Would you like to buy a [usb.name]"
+                "Yes":
+                    if inventory.buy(usb):
+                        "Thank you for your purchase!"
+                        $ start_raid_ch1.incProgress()
+                        $ renpy.block_rollback()
+                        call buy_more
+                        jump eshop
+
+                    else:
+                        "Not enough money"
+                        call buy_more
+                        jump eshop
+                "No":
+                    call buy_more
+                    jump eshop
+
+        "[knuckle.name]" if not knuckle.owned:
+            menu:
+                "Would you like to buy a [knuckle.name]"
+                "Yes":
+                    if inventory.buy(knuckle):
+                        "Thank you for your purchase!"
+                        $ start_raid_ch1.incProgress()
+                        $ renpy.block_rollback()
+                        call buy_more
+                        jump eshop
+
                     else:
                         "Not enough money"
                         call buy_more
@@ -132,6 +174,26 @@ label gshop:
                 "No":
                     call buy_more
                     jump gshop
+
+        "[ketchup.name]" if not ketchup.owned:
+            menu:
+                "Would you like to buy a [ketchup.name]"
+                "Yes":
+                    if inventory.buy(ketchup):
+                        "Thank you for your purchase!"
+                        $ start_raid_ch1.incProgress()
+                        $ renpy.block_rollback()
+                        call buy_more
+                        jump gshop
+
+                    else:
+                        "Not enough money"
+                        call buy_more
+                        jump gshop
+                "No":
+                    call buy_more
+                    jump gshop
+
         "Go back":
             jump mall
 

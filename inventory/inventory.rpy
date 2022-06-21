@@ -1,7 +1,7 @@
 init python:
     inv_page = 0
     class item:
-        def __init__(self, name, cost = 0, image="", owned = False, physical = True):
+        def __init__(self, name, cost = 0, image="", owned = False):
             self.name = name
             self.cost = cost
             self.image = image
@@ -26,17 +26,31 @@ init python:
             self.money += amount
             #Earn money?
 
+        def itemCheck(self, reqitem):
+            for item in inventory.items:
+                if item.name == reqitem.name:
+                    reqitem.owned = False
+                    self.items.remove(reqitem)
+                    return True
+
+
+
     #Electronic
-    cam = item("Camera", 15, image="/Items/camera.png")#100
-    rec = item("Recorder", 15, image="/Items/recorder.png")#200
-    lap = item("Laptop", 15, image="/Items/laptop.png")#500
-    usb = item("USB", 15, image="/Items/usb.png")
-    vidfile = item("Video",0, image="/Items/vidfile.png",physical = False)
+    cam = item("Camera", 200, image="/Items/camera.png")
+    rec = item("Recorder", 100, image="/Items/recorder.png")
+    lap = item("Laptop", 0, image="/Items/laptop.png")#400
+    usb = item("USB", 100, image="/Items/usb.png")#100
+    knuckle=item("Brass Knuckle", 400, image = "/Items/brass_knuckles.png")#400
+
 
     #Food
-    meat = item("Meat", 15, image="/Items/meat.png")#50
-    coke = item("Soft Drinks", 15, image="/Items/coke.png")#20
-    cabbage = item("Cabbage", 15, image="/Items/cabbage.png")#30
+    meat = item("Meat", 100, image="/Items/meat.png")#50
+    coke = item("Soft Drinks", 50, image="/Items/coke.png")
+    cabbage = item("Cabbage", 50, image="/Items/cabbage.png")
+    ketchup = item("Ketchup", 100, image="/Items/ketchup.png")#100
+
+    #Extras
+    vidfile = item("Evidence", 0, image="/Items/vidfile.png")
 
     #Using
     inventory = Inventory()

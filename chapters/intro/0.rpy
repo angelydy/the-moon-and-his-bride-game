@@ -536,7 +536,7 @@ label day_0:
         scene black
         with dissolve
         centered "{color=#FFF}Evening{/color}" with fade
-        scene mansion entrance with dissolve
+        scene mansion_entrance night with dissolve
         show laura neutral at left with moveinleft
         lg "{cps=25}Wow... I really thought you would be late"
         show jake happy at right with moveinright

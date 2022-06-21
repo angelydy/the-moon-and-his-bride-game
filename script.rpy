@@ -10,15 +10,21 @@ label initialize:
         jump intro
     elif chapter == 1:
         jump chapter1
+    elif chapter == 2:
+        call tbc
+        pause
     return
 
 label tbc:
     hide screen phone
     scene black with dissolve
+    window hide
     image cont = "tbc.png"
+    pause (1)
     show cont:
         subpixel True pos (666, 200) zoom 1.21
-    return
+    "{color=#FFF}To be continued{/color}" with dissolve
+    $ MainMenu(confirm=False)()
 
 label uc:
     hide screen phone

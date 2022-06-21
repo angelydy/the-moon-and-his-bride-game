@@ -36,6 +36,7 @@ init python:
                 return True
             return False
 
+
 #Declaring the Quest
 
 ################### Introduction ###################
@@ -68,8 +69,9 @@ default e_tweet_ch1 = Quest("Go to Hallway", "Exit Library")
 default cafe_ch1 = Quest("Head Home", "You're tired, you should go home")
 default e_cafe_ch1 = Quest("Meet Laura", "Laura wants to show me something in the Cafe")
 default evidence_ch1 = Quest("Give the Evidence", "We need to give the evidence to the authorities")
-default raid_ch1 = Quest("Talk to Laura", "Meet Laura in the canteen in the morning")
+default raid_ch1 = Quest("Place holder", "Place holder", goal = 2)
+default raid2_ch1 = Quest("Talk to Laura", "Meet Laura in the canteen in the morning")
 default start_raid_ch1 = Quest("Prepare", "Buy the required preparations: Ketchup, Brass Knuckle, USB", goal = 3)
 default start2_raid_ch1 = Quest("Talk to the Gang", "Talk to Laura and Jake", goal = 2)
 default chapter1_end = Quest("What's inside the video?", "I need to have a laptop so I can access the video")
-default chapter1_end2 = Quest("What's inside the video?", "I need to show these to the gang in the library during the afternoon")
+default chapter1_end2 = Quest("What's inside the video?", "I need to show the video at the cafe during the afternoon")

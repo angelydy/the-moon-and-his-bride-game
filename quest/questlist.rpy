@@ -44,6 +44,7 @@ label load_quest:
     $ mq.addQuest(cafe_ch1)
     $ mq.addQuest(e_cafe_ch1)
     $ mq.addQuest(raid_ch1)
+    $ mq.addQuest(raid2_ch1)
     $ mq.addQuest(start_raid_ch1)
     $ mq.addQuest(start2_raid_ch1)
     $ mq.addQuest(evidence_ch1)

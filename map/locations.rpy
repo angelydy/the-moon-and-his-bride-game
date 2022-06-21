@@ -11,7 +11,7 @@ label location:
     elif location == "pstation":
         jump pstation
     elif location == "lucas":
-        jump lucas_mansion
+        jump lucas_mansion_time
     else:
         return
 
@@ -24,31 +24,39 @@ label home:
             call morning_1
         elif day == 2:
             call morning_2
-        elif chapter == 1:
+        elif day == 3:
             call start_ch1
         window hide
         show screen phone
         $ renpy.pause(hard = True)
+
     elif energy <= 10 and energy > 5:
         scene home afternoon with dissolve
         show screen phone
         $ renpy.pause(hard = True)
+
     elif energy <= 5 and energy != 0:
         scene home evening with dissolve
         show screen phone
+
         if evening_home.shouldShow():
             jump evening_1
+
         elif evening_home2.shouldShow():
             jump evening_2
-        elif e_class_ch1.shouldTrigger == True:
+
+        elif e_class_ch1.shouldTrigger() == True:
             call home_ch1
             show screen phone
+
         elif cafe_ch1.shouldShow():
             call homeevening_ch1
             jump location
+
         elif evidence_ch1.shouldTrigger():
             call homeevening2_ch1
             jump location
+
         menu:
             "Go to sleep":
                 $ day += 1
@@ -71,9 +79,9 @@ label coffee:
         $ location = "coffee"
         scene coffee with dissolve
         show screen phone
-        hide screen phone
         menu:
             "Work" if energy <= 5 and energy != 0:
+                hide screen phone
                 "(You worked as a barista)"
                 if go_to_work.shouldShow():
                     $ go_to_work.completed = True
@@ -81,10 +89,19 @@ label coffee:
                 $ energy -= 3
                 $ renpy.block_rollback()
                 centered "{color=#85bb65}Money = +15${/color}"
-            "Hangout with Laura" if e_cafe_ch1.shouldShow():
-                call cafe_ch1
-                jump location
-        jump home
+
+            "Look Around":
+                if e_cafe_ch1.shouldShow():
+                    call cafe_ch1
+                    jump location
+                elif chapter1_end2.shouldShow():
+                    jump ch1_end
+                else:
+                    hide screen phone
+                    th"{cps=25} Hmm..."
+                    th"{cps=25} Nothing new"
+                    jump location
+
     elif energy <= 0:
         jump home
 
@@ -104,13 +121,21 @@ label pstation:
                 "Police" "{cps=25} You have few minutes to talk to the detainee"
                 if visit_jake.shouldShow():
                     call police_2
+                jump location
             "Show Evidence" if evidence_ch1.shouldShow():
                 hide screen phone
-                "Police" "{cps=25} Hmm?"
-                "(You surrendered the evidence to the Police)"
-                "Police" "{cps=25} This evidence will be checked thoroughly"
-                $ evidence_ch1.completed = True
-                jump location
+                if inventory.itemCheck(vidfile):
+                    "Police" "{cps=25} Hmm?"
+                    "(You surrendered the evidence to the Police)"
+                    "Police" "{cps=25} This evidence will be checked thoroughly"
+                    if evidence_ch1.shouldShow():
+                        $ evidence_ch1.completed = True
+                        jump location
+                else:
+                    "Police" "Hmm?"
+                    mc"{cps=25} Nothing"
+                    jump location
+
     else:
         "I can only go there during afternoon"
         jump location

@@ -1,21 +1,46 @@
-label lucas_mansion:
-    hide screen phone
+label lucas_mansion_time:
+    show screen phone
     if chapter != 1:
+        hide screen phone
         "{cps=25}I have no business there..."
         jump location
-    elif chapter == 1:
+    elif energy <= 15 and energy > 10:
+        scene mansion_entrance morning with dissolve
+        jump lucas_mansion
+    elif energy <= 10 and energy > 5:
+        scene mansion_entrance afternoon with dissolve
+        jump lucas_mansion
+    elif energy <= 5 and energy != 0:
+        scene mansion_entrance evening with dissolve
+        jump lucas_mansion
+    elif energy <= 0:
+        jump home
+
+label lucas_mansion:
+    hide screen phone
+    if chapter == 1:
         $ location == "lucas"
         th"{cps=25} The place looks heavily guarded…"
         th"{cps=25} There are police and security guards everywhere, I wonder if they will let me pass"
+        show screen phone
         menu:
             "Walk to the front":
                 call security
+                if cctv_ch1.shouldShow():
+                    $ cctv_ch1.completed = True
+                    $ e_cctv_ch1.available = True
+                jump lucas_mansion_time
+
             "Sneak around":
                 call sneak_around
+                if cctv_ch1.shouldShow():
+                    $ cctv_ch1.completed = True
+                    $ e_cctv_ch1.available = True
+                jump lucas_mansion_time
 
-        jump location
 
         label security:
+            hide screen phone
             "Security" "{cps=25} Sir you are not permitted to go through"
             menu:
                 "I’ll head back":
@@ -25,20 +50,22 @@ label lucas_mansion:
                     return
 
         label friend:
+            hide screen phone
             "Security" "{cps=25} We can’t let you in unless Mr. Lucas said so and Mr. Lucas hasn’t gone home yet"
             mc"{cps=25} Hmm..."
             th"{cps=25} I need Lucas’s permission but where could he be?"
             return
 
         label sneak_around:
-                scene black with dissolve
-                "(You sneaked around)"
-                "Police" "{cps=25}What are you doing?"
-                mc"{cps=25} Shit!"
-                "Police" "{cps=25} This is a private area and site of investigation do not go any further"
-                mc"{cps=25} I’m sorry officer"
-                th"{cps=25} I need a distraction to get inside and someone to accompany me once I’m inside"
-                return
+            hide screen phone
+            scene black with dissolve
+            "(You sneaked around)"
+            "Police" "{cps=25}What are you doing?"
+            mc"{cps=25} Shit!"
+            "Police" "{cps=25} This is a private area and site of investigation do not go any further"
+            mc"{cps=25} I’m sorry officer"
+            th"{cps=25} I need a distraction to get inside and someone to accompany me once I’m inside"
+            return
 
     else:
         jump lobby
